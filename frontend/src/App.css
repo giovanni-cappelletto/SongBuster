@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-clr: hsl(30, 100%, 99%);
+  --primary-clr: hsl(190, 36%, 88%);
+  --accent-clr: hsl(0, 0%, 9%);
+  --owned-clr: hsl(101, 72%, 50%);
+  --not-owned-clr: hsl(3, 72%, 50%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-clr);
+  position: relative;
+}
+
+::selection {
+  background-color: var(--primary-clr);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-clr);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 35%);
+}
+
+/* Button Component */
+.btn {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  padding: 8px 15px;
+  border-radius: 2px;
+  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.material-symbols-outlined {
+  margin-inline-start: 5px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  opacity: 0.7;
+}
+
+.light {
+  background-color: var(--primary-clr);
+  color: var(--accent-clr);
+}
+
+.light:focus-visible {
+  outline: 1px solid var(--accent-clr);
+}
+
+.dark {
+  background-color: var(--accent-clr);
+  color: var(--bg-clr);
+}
+
+.dark:focus-visible {
+  outline: 1px solid var(--primary-clr);
+}
+
+/* Cards */
+.card_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  gap: 2rem;
+  padding: 10px 50px 50px 50px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: var(--primary-clr);
+  color: var(--accent-clr);
+  border-radius: 2px;
+}
+
+.card .title {
+  position: relative;
+  font-size: 20px;
+}
+
+.card .title::before {
+  --size: 12px;
+
+  content: "";
+  background-color: var(--not-owned-clr);
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid var(--accent-clr);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+}
+
+.card[data-owned="true"] .title::before {
+  background-color: var(--owned-clr);
+}
+
+.card .info {
+  margin-block-start: 5px;
+}
+
+.card span {
+  font-weight: 600;
+}
+
+.cover_container {
+  --size: 110px;
+
+  display: grid;
+  place-items: center;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+}
+
+.cover_background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  z-index: 1;
+  background-color: hsl(0, 100%, 100%);
+}
+
+.cover_container svg {
+  display: grid;
+  place-items: center;
+  height: 90%;
+  transform: translateX(-50px);
+}
+
+.cover {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.circle {
+  transform-origin: center;
+  animation: playing 7s infinite;
+  animation-play-state: paused;
+}
+
+.card:hover .circle {
+  animation-play-state: running;
+}
+
+@keyframes playing {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.8;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+/* Search */
+.input {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  caret-color: var(--accent-clr);
+  background-color: var(--primary-clr);
+  padding: 10px;
+  width: 500px;
+  border-radius: 2px;
+}
+
+.input::selection {
+  color: var(--bg-clr);
+  background-color: var(--accent-clr);
+}
+
+.input:placeholder-shown {
+  font-style: italic;
+}
+
+.input:focus-visible {
+  outline: 1px solid var(--accent-clr);
+}

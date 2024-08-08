@@ -1,0 +1,130 @@
+[
+  {
+    "title": "Jar Of Files",
+    "artist": "Alice In Chains",
+    "year": 1994,
+    "type": "CD",
+    "url": "https://i.scdn.co/image/ab67616d0000b273fa4e0b3ca0ad54406a06a15d",
+    "owned": true
+  },
+  {
+    "title": "SAP",
+    "artist": "Alice In Chains",
+    "year": 1992,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/51TXfRvrtlL._SY200_QL15_.jpg",
+    "owned": true
+  },
+  {
+    "title": "MTV Unplugged",
+    "artist": "Alice In Chains",
+    "year": 1996,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/812Bz5tDT7L._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "...Like Clockwork",
+    "artist": "Queens Of The Stone Age",
+    "year": 2013,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/61zeVZjqXJL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "Songs For The Deaf",
+    "artist": "Queens Of The Stone Age",
+    "year": 2002,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/61MvC4pGkDL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "In Times New Roman...",
+    "artist": "Queens Of The Stone Age",
+    "year": 2023,
+    "type": "CD",
+    "url": "https://theseekercl.com/cdn/shop/files/R-27377106-1686708740-6351.jpg?v=1686872530",
+    "owned": true
+  },
+  {
+    "title": "Medicine At Midnight",
+    "artist": "Foo Fighters",
+    "year": 2021,
+    "type": "CD",
+    "url": "https://upload.wikimedia.org/wikipedia/en/2/2f/Medicine_at_Midnight.jpeg",
+    "owned": true
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "Foo Fighters",
+    "year": 2009,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/81YbEgRXarL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "In Your Honor",
+    "artist": "Foo Fighters",
+    "year": 2005,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/71m1WDralgL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "year": 1991,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/71DQrKpImPL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "Nirvana",
+    "artist": "Nirvana",
+    "year": 2002,
+    "type": "CD",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nirvana_album_cover.svg/2000px-Nirvana_album_cover.svg.png",
+    "owned": true
+  },
+  {
+    "title": "Greatest Hits",
+    "artist": "Guns N' Roses",
+    "year": 2002,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/81rvJ7chswL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "The Hunting Party",
+    "artist": "Linkin Park",
+    "year": 2014,
+    "type": "CD",
+    "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfrQAZQoa7n3zwQ7sBI2Os7SK-2ZgRGvgI2w&s",
+    "owned": true
+  },
+  {
+    "title": "American Idiot",
+    "artist": "Green Day",
+    "year": 2004,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/71Z0rLIvpuL._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "OK Computer",
+    "artist": "Radiohead",
+    "year": 1997,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/715LZJ5qX0L._UF1000,1000_QL80_.jpg",
+    "owned": true
+  },
+  {
+    "title": "Superunknown",
+    "artist": "Soundgarden",
+    "year": 1994,
+    "type": "CD",
+    "url": "https://m.media-amazon.com/images/I/61TTHm2S35L._UF1000,1000_QL80_.jpg",
+    "owned": false
+  }
+]

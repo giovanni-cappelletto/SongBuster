@@ -1,0 +1,31 @@
+.table_container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.table_container button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 50px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  text-align: center;
+  border: 1px solid #ababab;
+  padding: 5px 15px;
+}
+
+th {
+  background-color: var(--primary-clr);
+}
+
+tr:nth-child(even) {
+  background-color: hsl(191, 48%, 95%);
+}
