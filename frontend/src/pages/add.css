@@ -23,6 +23,7 @@ section {
   color: var(--bg-clr);
   position: fixed;
   inset: 0 50vw;
+  overflow-y: scroll;
 }
 
 .add_title {
@@ -172,7 +173,8 @@ form {
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   width: 90vw;
-  height: 85vh;
+  height: 90vh;
+  overflow: hidden;
   border-radius: 5px;
   background-color: var(--bg-clr);
   color: var(--accent-clr);
@@ -238,7 +240,7 @@ form {
 }
 
 .file_editor {
-  max-height: 64vh;
+  max-height: 70vh;
   padding: 25px 50px;
   overflow-y: scroll;
 }
