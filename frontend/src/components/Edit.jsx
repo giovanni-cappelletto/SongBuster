@@ -41,8 +41,10 @@ const Edit = ({ openEditMode, setOpenEditMode }) => {
             text="Aggiorna"
             className="update_btn"
             onClick={() => {
-              setDataJSON("editData", currentData);
-              window.location.href = "/";
+              (async () => {
+                await setDataJSON("editData", currentData);
+                window.location.href = "/";
+              })();
             }}
           />
         </div>
