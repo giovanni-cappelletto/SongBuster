@@ -63,8 +63,10 @@ const Add = () => {
     }
 
     if (checkPassed) {
-      setDataJSON("addData", JSON.stringify(cardInfo));
-      window.location.href = "/";
+      (async () => {
+        await setDataJSON("addData", JSON.stringify(cardInfo));
+        window.location.href = "/";
+      })();
     }
   };
 
