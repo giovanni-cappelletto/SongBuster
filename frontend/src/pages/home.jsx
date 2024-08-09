@@ -1,34 +1,51 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Header from "../components/Header.jsx";
 import Card from "../components/Card.jsx";
 import Search from "../components/Search.jsx";
 import Button from "../components/Button.jsx";
 import { getDataJSON } from "../utils/fetch.js";
+import getFilteredData from "../utils/getFilteredData.js";
 import "./home.css";
 
 const Home = () => {
   const [isActive, setIsActive] = useState(false);
+
+  // ==== Used for sorting cards ====
   const [searchItem, setSearchItem] = useState("");
   const [filters, setFilters] = useState({
+    owned: false,
     wished: false,
     cd: false,
     vinyl: false,
   });
   const [data, setData] = useState([]);
+  const filteredData = useMemo(
+    () => getFilteredData(data, filters, searchItem),
+    [data, filters, searchItem]
+  );
+  const albumInfo = useMemo(() => {
+    return {
+      currentAlbum: filteredData.filter((value) => value.owned).length,
+      totalAlbum: filteredData.length,
+    };
+  }, [filteredData]);
 
+  // Fetch data
   useEffect(() => {
     getDataJSON("getData", setData);
   }, []);
 
-  window.addEventListener("scroll", () => {
-    const normalizedPosition = window.scrollY / window.innerHeight;
+  // Hides scrollToTop button
+  useEffect(() => {
+    const hideButton = () => {
+      const normalizedPosition = window.scrollY / window.innerHeight;
+      setIsActive(normalizedPosition >= 1);
+    };
 
-    if (normalizedPosition >= 1) {
-      setIsActive(true);
-      return;
-    }
-    setIsActive(false);
-  });
+    window.addEventListener("scroll", hideButton);
+
+    return () => window.removeEventListener("scroll", hideButton);
+  }, []);
 
   return (
     <div>
@@ -38,36 +55,13 @@ const Home = () => {
         setSearchItem={setSearchItem}
         filters={filters}
         setFilters={setFilters}
+        getFilteredData={getFilteredData}
+        albumInfo={albumInfo}
       />
 
       <div className="card_container">
-        {data
-          .sort((a, b) => a.year - b.year)
-          .map(({ title, artist, year, type, url, owned }, index) => {
-            // CD and Vinyl filter
-            if (!(filters.cd && filters.vinyl)) {
-              if (
-                (filters.cd && type === "Vinile") ||
-                (filters.vinyl && type === "CD")
-              ) {
-                return;
-              }
-            }
-
-            // Wished filter
-            if (filters.wished && owned) {
-              return;
-            }
-
-            // Search filter
-            if (
-              title.toLowerCase().indexOf(searchItem.toLowerCase()) !== 0 &&
-              String(year).indexOf(searchItem) !== 0 &&
-              artist.toLowerCase().indexOf(searchItem.toLowerCase())
-            ) {
-              return;
-            }
-
+        {filteredData.map(
+          ({ title, artist, year, type, url, owned }, index) => {
             return (
               <Card
                 title={title}
@@ -79,7 +73,8 @@ const Home = () => {
                 owned={owned}
               />
             );
-          })}
+          }
+        )}
       </div>
 
       <Button

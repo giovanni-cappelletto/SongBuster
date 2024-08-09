@@ -55,8 +55,14 @@ header {
 
 .search_form {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 20px;
   padding: 10px 50px 5px;
+}
+
+.search_desc {
+  color: var(--accent-clr);
 }
 
 .filters {

@@ -39,19 +39,37 @@ const DownloadPDF = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map(({ title, artist, type, owned }, index) => {
-            if (owned) {
-              return;
-            }
+          {data
+            .sort((a, b) => {
+              const artistA = a.artist.toUpperCase();
+              const artistB = b.artist.toUpperCase();
 
-            return (
-              <tr key={index}>
-                <td>{title}</td>
-                <td>{artist}</td>
-                <td>{type}</td>
-              </tr>
-            );
-          })}
+              if (artistA < artistB) {
+                return -1;
+              }
+
+              if (artistA > artistB) {
+                return 1;
+              }
+
+              // Same artist
+              return a.year - b.year;
+            })
+            .map(({ title, artist, year, type, owned }, index) => {
+              if (owned) {
+                return;
+              }
+
+              return (
+                <tr key={index}>
+                  <td>
+                    {title} ({year})
+                  </td>
+                  <td>{artist}</td>
+                  <td>{type}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

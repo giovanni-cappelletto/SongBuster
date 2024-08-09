@@ -10,7 +10,7 @@ const isJSON = (str) => {
   }
 };
 
-export const getDataJSON = async (path, setData) => {
+export const getDataJSON = async (path, setData = "") => {
   await axios
     .get(`${serverURL}/${path}`)
     .then((res) => {
@@ -20,7 +20,9 @@ export const getDataJSON = async (path, setData) => {
 
       return res.data;
     })
-    .then((res) => setData(res));
+    .then((res) => {
+      return setData(res);
+    });
 };
 
 export const setDataJSON = async (path, newData) => {
