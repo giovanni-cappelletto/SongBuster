@@ -12,6 +12,7 @@
 }
 
 table {
+  margin-block: 50px;
   border-collapse: collapse;
 }
 
