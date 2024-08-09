@@ -14,7 +14,7 @@ const DownloadPDF = () => {
 
   const options = {
     filename: "futuri_acquisti.pdf",
-    margin: 1,
+    margin: [0.7, 1.25],
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 3, dpi: 192, letterRendering: true },
     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
