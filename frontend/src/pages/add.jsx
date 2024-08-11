@@ -20,6 +20,7 @@ const Add = () => {
     url: "https://t3.ftcdn.net/jpg/01/46/91/16/360_F_146911624_MpozeTIQOoTUUURHWbhFc3Gleql65npI.jpg",
     owned: false,
   });
+  const [clicked, setClicked] = useState(false);
 
   const checkValues = (prop, defaultValue) => {
     if (!prop || prop.length === 0) {
@@ -62,12 +63,16 @@ const Add = () => {
       }
     }
 
-    if (checkPassed) {
-      (async () => {
-        await setDataJSON("addData", JSON.stringify(cardInfo));
-        window.location.href = "/";
-      })();
+    if (!checkPassed) {
+      return;
     }
+
+    setClicked(true);
+
+    (async () => {
+      await setDataJSON("addData", JSON.stringify(cardInfo));
+      window.location.href = "/";
+    })();
   };
 
   return (
@@ -125,7 +130,12 @@ const Add = () => {
           </span>
         </form>
 
-        <Button text="Aggiungi" theme="dark" onClick={handleClick}>
+        <Button
+          text="Aggiungi"
+          theme="dark"
+          onClick={handleClick}
+          disabled={clicked}
+        >
           <span className="material-symbols-outlined">add</span>
         </Button>
       </section>

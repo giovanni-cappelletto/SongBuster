@@ -22,7 +22,12 @@ const Card = ({ title = "Titolo", artist, year, type, owned, url }) => {
         </div>
       </div>
 
-      <Illustration url={url} title={title} />
+      <a
+        href={`https://www.youtube.com/results?search_query=${title.toLowerCase()}+${artist.toLowerCase()}`}
+        target="_blank"
+      >
+        <Illustration url={url} title={title} />
+      </a>
     </div>
   );
 };
