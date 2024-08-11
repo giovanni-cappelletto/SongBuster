@@ -69,10 +69,11 @@ const Add = () => {
 
     setClicked(true);
 
-    (async () => {
-      await setDataJSON("addData", JSON.stringify(cardInfo));
+    new Promise((res, rej) => {
+      res(setDataJSON("addData", JSON.stringify(cardInfo)));
+    }).then(() => {
       window.location.href = "/";
-    })();
+    });
   };
 
   return (

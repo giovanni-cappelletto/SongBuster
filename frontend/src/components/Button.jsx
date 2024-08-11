@@ -5,7 +5,7 @@ const Button = ({
   theme,
   dataActive,
   onClick,
-  disabled,
+  disabled = false,
 }) => {
   return (
     <button

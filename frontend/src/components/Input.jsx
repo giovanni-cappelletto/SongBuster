@@ -7,10 +7,15 @@ const Input = ({ type = "text", id, placeholder, cardInfo, setCardInfo }) => {
 
       value = value > 2100 || value < 1900 ? new Date().getFullYear() : value;
     } else if (id !== "url") {
-      value = value
-        .split(" ")
-        .map((word) => word[0].toUpperCase() + word.slice(1, word.length))
-        .join(" ");
+      value = value.split(" ");
+
+      if (value.length === 1) {
+        value = value.join(" ").toUpperCase();
+      } else {
+        value
+          .map((word) => word[0].toUpperCase() + word.slice(1, word.length))
+          .join(" ");
+      }
     }
 
     setCardInfo({ ...cardInfo, [id]: value });

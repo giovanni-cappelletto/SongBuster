@@ -82,7 +82,6 @@ const Home = () => {
         theme="dark"
         dataActive={isActive}
         onClick={() => window.scrollTo(0, 0)}
-        disabled
       >
         <span className="material-symbols-outlined">arrow_upward</span>
       </Button>
